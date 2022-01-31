@@ -4,4 +4,6 @@ import 'reflect-metadata'
 
 import { app, env } from '@/main/config'
 
-app.listen(env.port, () => console.log(`Server Running at http://localhost:${env.port}`))
+app.listen(env.port, () => {
+  console.log(`Server Running at http://localhost:${env.port}`)
+})
