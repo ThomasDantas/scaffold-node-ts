@@ -2,7 +2,7 @@ import { LoadUser } from '@/domain/contracts/gateways'
 import { HttpGetClient } from '@/infra/gateways'
 
 type UserInfo = {
-  id: string
+  id: number
   name: string
   email: string
 }
@@ -24,7 +24,7 @@ export class Api {
 
   private async getUserInfo (clientToken?: string): Promise<UserInfo> {
     return {
-      id: '123123',
+      id: 123123,
       name: '123123',
       email: '123123'
     }
