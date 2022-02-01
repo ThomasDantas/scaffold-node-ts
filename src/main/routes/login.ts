@@ -1,6 +1,6 @@
 import { makeDataController } from '@/main/composers'
 import { adaptExpressRoute as adapt } from '@/main/adapters'
-import { auth } from '@/main/middlewares/authentication'
+import { auth } from '@/main/middlewares'
 
 import { Router } from 'express'
 
