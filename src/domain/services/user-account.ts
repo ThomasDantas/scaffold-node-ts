@@ -1,10 +1,10 @@
 type AccountData = {
-  id: string
+  id: number
   name: string
 }
 
 export class UserAccount {
-  id: string
+  id: number
   name: string
 
   constructor (accountData: AccountData) {

@@ -1,2 +1,10 @@
+#server
 PORT = xxx
 SECRET = xxx
+
+#db
+DB_HOST = xxx
+DB_PORT = xxx
+DB_USERNAME = xxx
+DB_PASSWORD = xxx
+DB_DATABAS = xxx

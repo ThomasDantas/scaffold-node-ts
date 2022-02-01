@@ -8,7 +8,7 @@ export namespace LoadUser {
   }
 
   export type Output = {
-    id: string
+    id: number
     name: string
     email: string
   }

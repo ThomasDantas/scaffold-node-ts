@@ -1,2 +1,2 @@
-export * from './data-composer'
-export * from './authentication-middleware-composer'
+export * from './data'
+export * from './authentication-middleware'

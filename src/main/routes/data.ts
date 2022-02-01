@@ -5,6 +5,6 @@ import { auth } from '@/main/middlewares'
 import { Router } from 'express'
 
 export default (router: Router): void => {
-  router.get('/data', adapt(makeDataController()))
+  router.post('/data-create', adapt(makeDataController()))
   router.get('/data-auth', auth, adapt(makeDataController()))
 }

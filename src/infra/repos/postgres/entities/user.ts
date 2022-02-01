@@ -5,9 +5,12 @@ export class PgUser {
   @PrimaryGeneratedColumn()
   id!: number
 
-  @Column({ name: 'nome', nullable: true })
+  @Column({ name: 'nome' })
   name!: string
 
   @Column()
   email!: string
+
+  @Column()
+  token!: string
 }
