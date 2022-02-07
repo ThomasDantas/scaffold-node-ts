@@ -20,7 +20,8 @@ export namespace LoadUserAccount {
   export type Input = { id: string }
 
   export type Output = undefined | {
+    id: number
     name: string
-    token: string
+    email: string
   }
 }

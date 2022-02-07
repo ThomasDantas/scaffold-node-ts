@@ -1,5 +1,4 @@
-export const apiKeyAuthSchema = {
-  type: 'apiKey',
-  in: 'header',
-  name: 'x-access-token'
+export const bearerAuthSchema = {
+  type: 'http',
+  scheme: 'bearer'
 }

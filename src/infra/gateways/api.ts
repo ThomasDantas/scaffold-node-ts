@@ -25,8 +25,8 @@ export class Api {
   private async getUserInfo (clientToken?: string): Promise<UserInfo> {
     return {
       id: 123123,
-      name: '123123',
-      email: '123123'
+      name: 'thomasd',
+      email: 'thomas@paipe.co'
     }
   }
 }

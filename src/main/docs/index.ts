@@ -5,7 +5,7 @@ import schemas from '@/main/docs/schemas'
 export default {
   openapi: '3.0.0',
   info: {
-    title: '4show - Doc Api Rest',
+    title: '4show - Documentação Api Rest',
     description: 'Essa é a documentação da API do 4show - NodeJs usando Typescript, Clean Architecture e seguindo os princípios do SOLID e Design Patterns.',
     version: '1.0.0',
     contact: {
@@ -29,6 +29,9 @@ export default {
   tags: [{
     name: 'Login',
     description: 'APIs relacionadas a Login'
+  }, {
+    name: 'User',
+    description: 'APIs relacionadas aos dados do Usuario'
   }],
   paths,
   schemas,

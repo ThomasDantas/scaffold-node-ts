@@ -3,9 +3,6 @@ export const loginParamsSchema = {
   properties: {
     token: {
       type: 'string'
-    },
-    auth: {
-      type: 'string'
     }
   },
   required: ['token']

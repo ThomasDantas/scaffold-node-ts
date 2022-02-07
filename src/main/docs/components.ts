@@ -1,4 +1,4 @@
-import { apiKeyAuthSchema } from '@/main/docs/schemas/'
+import { bearerAuthSchema } from '@/main/docs/schemas/'
 import {
   badRequest,
   serverError,
@@ -9,7 +9,7 @@ import {
 
 export default {
   securitySchemes: {
-    apiKeyAuth: apiKeyAuthSchema
+    JWT: bearerAuthSchema
   },
   badRequest,
   serverError,

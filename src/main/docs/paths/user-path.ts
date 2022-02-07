@@ -1,25 +1,18 @@
-export const loginPath = {
-  post: {
-    tags: ['Login'],
-    summary: 'API para autenticar usuário',
-    description: 'Essa rota pode ser executada por **qualquer usuário**',
-    requestBody: {
-      required: true,
-      content: {
-        'application/json': {
-          schema: {
-            $ref: '#/schemas/loginParams'
-          }
-        }
-      }
-    },
+export const UserPath = {
+  get: {
+    tags: ['User'],
+    summary: 'API para retornar os dados do usuário',
+    description: 'Essa rota pode ser executada por **qualquer usuário** com um token valido',
+    security: [{
+      $ref: '#/schemas/securitySchemes'
+    }],
     responses: {
       200: {
         description: 'Sucesso',
         content: {
           'application/json': {
             schema: {
-              $ref: '#/schemas/login'
+              $ref: '#/schemas/userData'
             }
           }
         }

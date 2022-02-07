@@ -1,20 +1,20 @@
-import { Data } from '@/domain/use-cases'
+import { Login } from '@/domain/use-cases'
 import { HttpResponse, ok, unauthorized } from '@/application/helpers'
 import { ValidationBuilder as Builder, Validator } from '@/application/validation'
 import { Controller } from '@/application/controllers'
 
-type HttpRequest = { token: string, auth?: string }
+type HttpRequest = { token: string }
 
-type Model = Error | { accessToken: string} | { id: number, name: string, email: string }
+type Model = Error | { accessToken: string }
 
-export class DataController extends Controller {
-  constructor (private readonly execute: Data) {
+export class LoginController extends Controller {
+  constructor (private readonly auth: Login) {
     super()
   }
 
-  async perform ({ token, auth }: HttpRequest): Promise<HttpResponse<Model>> {
+  async perform ({ token }: HttpRequest): Promise<HttpResponse<Model>> {
     try {
-      const accessToken = await this.execute({ token, auth })
+      const accessToken = await this.auth({ token })
       return ok(accessToken)
     } catch {
       return unauthorized()
