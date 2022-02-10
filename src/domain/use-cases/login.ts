@@ -1,8 +1,7 @@
 import { LoadUser, TokenGenerator } from '@/domain/contracts/gateways'
 import { LoginError } from '@/domain/services/errors'
 import { SaveUserAccount } from '@/domain/contracts/repos'
-import { UserAccount } from '@/domain/services'
-import { AccessToken } from '@/domain/services/access-token'
+import { UserAccount, AccessToken } from '@/domain/services'
 
 type Setup = (
   userAccountRepo: LoadUser,
