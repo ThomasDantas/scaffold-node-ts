@@ -7,7 +7,7 @@ export namespace LoadUser {
     token: string
   }
 
-  export type Output = {
+  export type Output = undefined | {
     id: number
     name: string
     email: string

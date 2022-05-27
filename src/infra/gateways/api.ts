@@ -18,8 +18,12 @@ export class Api {
   ) {}
 
   async loadUser ({ token }: Input): Promise<Output> {
-    const { id, name, email } = await this.getUserInfo(token)
-    return { id, name, email }
+    try {
+      const { id, name, email } = await this.getUserInfo(token)
+      return { id, name, email }
+    } catch {
+      return undefined
+    }
   }
 
   private async getUserInfo (clientToken?: string): Promise<UserInfo> {

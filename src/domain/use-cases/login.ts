@@ -4,7 +4,7 @@ import { SaveUserAccount } from '@/domain/contracts/repos'
 import { UserAccount, AccessToken } from '@/domain/services'
 
 type Setup = (
-  userAccountRepo: LoadUser,
+  api: LoadUser,
   pgUserRepo: SaveUserAccount,
   token: TokenGenerator) => Login
 
@@ -12,8 +12,8 @@ type Input = { token: string }
 type Output = { accessToken: string }
 export type Login = (params: Input) => Promise<Output>
 
-export const setupLogin: Setup = (userAccountRepo, pgUserRepo, token) => async params => {
-  const accountData = await userAccountRepo.loadUser(params)
+export const setupLogin: Setup = (api, pgUserRepo, token) => async params => {
+  const accountData = await api.loadUser(params)
   if (accountData !== undefined) {
     const pgUser = await pgUserRepo.saveUser({ ...accountData, token: params.token })
     const userAccount = new UserAccount(pgUser)
