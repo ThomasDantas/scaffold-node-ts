@@ -1,6 +1,6 @@
 import { Login } from '@/domain/use-cases'
-import { HttpResponse, ok, unauthorized } from '@/application/helpers'
-import { ValidationBuilder as Builder, Validator } from '@/application/validation'
+import { badRequest, HttpResponse, ok, unauthorized } from '@/application/helpers'
+import { Required } from '@/application/validation'
 import { Controller } from '@/application/controllers'
 
 type HttpRequest = { token: string }
@@ -13,6 +13,10 @@ export class LoginController extends Controller {
   }
 
   async perform ({ token }: HttpRequest): Promise<HttpResponse<Model>> {
+    const error = this.validadeToken(token)
+    if (error !== undefined) {
+      return badRequest(error)
+    }
     try {
       const accessToken = await this.auth({ token })
       return ok(accessToken)
@@ -21,9 +25,7 @@ export class LoginController extends Controller {
     }
   }
 
-  override buildValidators ({ token }: HttpRequest): Validator[] {
-    return [
-      ...Builder.of({ value: token, fieldName: 'token' }).required().build()
-    ]
+  private validadeToken (token: string): Error | undefined {
+    return new Required(token, 'token').validate()
   }
 }
