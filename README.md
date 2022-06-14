@@ -31,6 +31,6 @@ Projeto base para NodeJs com TypeScript
     - middlewares = Autenticação (jwt);
     - routes = Rotas com inversão de dependência;
     - types = Novos tipos para reconhecimento TypeScript;
-  - **tests** = Testes;
+- **tests** = Testes;
     - infra/repos/postgres/mocks = Mock conexão com o banco;
     - main/routes = Teste de integração com a rota;
